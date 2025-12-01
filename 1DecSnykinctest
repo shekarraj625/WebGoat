@@ -1,0 +1,8 @@
+// ❌ VULNERABLE: Hardcoded credentials
+public class AuthService {
+    private static final String API_KEY = "12345-SECRET-KEY"; // Hardcoded secret
+
+    public boolean validate(String key) {
+        return key.equals(API_KEY);
+    }
+}
