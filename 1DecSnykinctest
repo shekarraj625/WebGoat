@@ -12,3 +12,4 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IO
 
     resp.getWriter().println("Hello " + name); // Reflects raw input → XSS
 }
+// ❌ VULNERABLE: Added to Vulnerabilities 
