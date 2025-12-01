@@ -6,3 +6,9 @@ public class AuthService {
         return key.equals(API_KEY);
     }
 }
+// ❌ VULNERABLE: XSS
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    String name = req.getParameter("name"); // Attacker can send <script>alert(1)</script>
+
+    resp.getWriter().println("Hello " + name); // Reflects raw input → XSS
+}
